@@ -1,0 +1,10 @@
+{
+  "app": {
+    "name": "Habit Tracker",
+    "debug": true
+  },
+  "database": {
+    "type": "sqlite",
+    "filename": "database.db"
+  }
+}
