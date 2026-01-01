@@ -1,7 +1,21 @@
 from flask import Flask, render_template
 from dotenv import load_dotenv
-import os
-import json
+import os, sqlite3, json
+
+# Create a cursor for exucuting SQL commands
+db = sqlite3.connect("database.db")
+cursor = db.cursor()
+# Create a first request for generate a new table (USERS)
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS habits (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    created_at DATE DEFAULT (DATE('now')),
+    completed_today INTEGER DEFAULT 0
+);
+""")
+db.commit()
+db.close()
 
 load_dotenv()
 

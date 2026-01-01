@@ -3,5 +3,4 @@ database.db
 *.pyc
 .env
 Rodmap.pdf
-# Ignore the French README file
 README_FR.md
